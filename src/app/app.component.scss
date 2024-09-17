@@ -1,0 +1,67 @@
+/* En este archivo se establecen selectores de estilo para para los componentes Ionic con la finalidad de personalizar el aspecto del menú */
+/* Estilos para el componente ion-menu ion-content */
+ion-menu ion-content {
+ --ion-background-color: #3333FF; /* Color de fondo del menú */
+}
+
+/* Estilos para el componente ion-list */
+ion-list {
+  --ion-background-color: #3333FF; /* Color de fondo de la lista con transparencia del 50% */
+  --ion-padding-start: 16px; /* Espaciado interno izquierdo */
+  --ion-padding-end: 16px; /* Espaciado interno derecho */
+}
+
+/* Estilos para el componente ion-list-header */
+ion-list-header {
+  color:yellow; /* Color del texto */
+  font-size: 1.5rem; /* Tamaño relativo de la fuente con respecto al elemento raíz */
+  font-weight: bold; /* Grosor de la fuente */
+}
+
+/* Estilos para el componente ion-note */
+ion-note {
+  font-size: 1rem; /* Tamaño relativo de la fuente con respecto al elemento raíz */
+  padding-left: 15px; /* Acolchado por la izquierda */
+  color:whitesmoke;  /* Color de la fuente */
+}
+
+/* Estilos para el componente ion-menu-toggle */
+ion-menu-toggle {
+  display: block; /* Visualizar como un elemento de bloque*/
+  margin-top: 16px; /* Margen superior */
+}
+
+/* Estilos para el componente ion-item */
+ion-item {
+  --ion-padding-start: 0; /* Espaciado interno izquierdo del item */
+  --ion-padding-end: 0; /* Espaciado interno derecho del item */
+}
+
+/* Estilos para el componente ion-icon */
+ion-icon {
+  color:aqua; /* Color del icono */
+  margin-left: 6px; /* Margen izquierdo del icono */
+}
+
+/* Estilos para el componente ion-icon cuando estamos sobre el */
+ion-icon:hover {
+  color:yellowgreen; /* Color del icono */
+  margin-left: 6px; /* Margen izquierdo del icono */
+}
+
+/* Estilos de clase personalizados para ion-label */
+.custom-label {
+  color: yellow; /* Cambia el color del texto del ion-label a amarillo */
+  font-size: 1.2rem; /* Cambia el tamaño de la fuente con respecto al elemento raíz */
+}
+
+/* Estilos para el componente ion-label cuando estamos sobre el */
+ion-label:hover {
+  color: #ffffff; /* Cambia el color al rojo cuando se presiona */
+  font-weight: bold; /* Grosor de la fuente */
+
+}
+/* Estilos para el componente ion-label cuando se activa */
+ion-label:active {
+  color: red; /* Color del texto */
+}

@@ -1,0 +1,92 @@
+<!-- Este archivo archivo se encarga de la representar la vista de ./folder.page.ts, es decir la presentación y de la gestión de las listas dinámicas, utilizando elementos de Ionic. -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> {{ listaSeleccionada.nombre }} </ion-title>
+    <ion-text><small style="margin:20px;">Lista creada el {{ fechaCreacionString }}</small></ion-text>
+    <ion-buttons slot="end">
+      <ion-button (click)="guardarCambios()">
+        <ion-icon slot="icon-only" name="save"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="5">
+        <ion-item>
+          <ion-label position="stacked" class="stacked-label">Añadir un nuevo producto a la lista {{
+            listaSeleccionada.nombre }}</ion-label>
+          <ion-input [(ngModel)]="nombreProducto" clearInput [autofocus]="true" placeholder="Nombre"
+            class="custom-input"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item class="custom-item">
+          <ion-label position="stacked" class="stacked-label">Unidades</ion-label>
+          <ion-input type="number" [(ngModel)]="unidadesProducto" clearInput min="0" class="custom-input"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item>
+          <ion-label position="stacked" class="stacked-label">Precio unidad</ion-label>
+          <ion-input type="number" [(ngModel)]="precioProducto" clearInput min="0" step="0.05"
+            class="custom-input"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-button color="success" (click)="agregarProducto()" shape="round">
+          Añadir producto
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list class="custom-item">
+    <ion-item *ngFor="let producto of listaSeleccionada.productos" class="custom-item">
+      <ion-label>
+        <ion-text>
+          <h2>{{ producto.nombre }}</h2>
+        </ion-text>
+        <p>Unidades: {{ producto.unidades }} | Precio: {{ producto.precio }}</p>
+      </ion-label>
+      <ion-checkbox [(ngModel)]="producto.comprado" (ionChange)="guardarCambios()"></ion-checkbox>
+      <ion-button slot="end" (click)="eliminarProducto(producto)" fill="clear">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-row class="custom-item">
+    <ion-col size="6">
+      <ion-card>
+        <ion-card-content class="custom-card-content">
+          <ion-text>
+            <h2><b>Total {{ listaSeleccionada.nombre }} : {{ calculaTotal() }}</b></h2>
+          </ion-text>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="2">
+      <ion-button color="danger" (click)="vaciarLista()">
+        Borrar Lista
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-grid>
+    <ion-row>
+      <ion-col offset-sm="4" size="6">
+        <ion-item>
+          <ion-label position="stacked" class="stacked-label">Añadir una nueva lista al menú</ion-label>
+          <ion-input [(ngModel)]="nombreLista" clearInput placeholder="Nombre" class="custom-input"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button color="success" (click)="nuevaLista()">
+          Crear Lista
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

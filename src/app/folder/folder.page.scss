@@ -1,0 +1,79 @@
+/* Este archivo define los selectores de estilo para para los componentes Ionic con la finalidad de personalizar la vista del componente */
+// folder.page.scss
+
+ /* Estilos para el encabezado */
+ ion-toolbar {
+  --background:#3333FF; /* Color de fondo del encabezado */
+  --color: yellow; /* Color del texto del encabezado */
+}
+
+/* Estilos para el título */
+ion-title {
+  font-size: 1.5rem; /* Tamaño de la fuente del título */
+  font-weight: bold; /* Grosor de la fuente del título */
+}
+
+/* Estilos para el componente ion-content */
+ion-content {
+   --ion-background-color: #7F7FD5; /* Color de fondo */
+  // --background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+  }
+
+/* Estilos para la fecha de creación */
+ion-text small {
+  font-size: .85rem; /* Tamaño relativo de la fuente con respecto al elemento raíz */
+  color:#ffffff;  /* Color del texto de la fecha de creación */
+}
+
+
+/* Estilos para el nombre del producto en la lista */
+ion-item ion-label ion-text h2 {
+  color: yellow; /* Color del texto del nombre del producto */
+}
+
+/* Estilos para las unidades y el precio del producto en la lista */
+ion-item ion-label p {
+  color: azure; /* Color del texto de las unidades y el precio del producto */
+}
+
+/* Estilos para el botón de eliminar producto */
+ion-button[slot="end"][fill="clear"] {
+  --background: azure; /* Color de fondo del botón */
+  --color: red; /* Color del texto del botón */
+}
+
+/* Estilos para el total de la lista */
+ion-card-content ion-text h2 {
+  color: yellow; /* Color del texto del total de la lista */
+}
+
+/* Estilos de clase para item personalizados */
+.custom-item {
+  --ion-background-color: #7F7FD5; /* Cambia el color de fondo del ion-item */
+}
+
+/* Estilos de clase para ion-input personalizados */
+.custom-input {
+  background-color: #E0FFFF; /* Cambia el color de fondo del ion-input */
+}
+
+/* Estilos del clase para ion-card-content personalizados */
+.custom-card-content {
+  background-color: #3333FF; /* Cambia el color de fondo del ion-card */
+}
+
+/* Estilos personalizados para las etiquetas flotantes de los inputs */
+ion-label.stacked-label {
+  color:azure; /* color del texto */
+  margin-bottom: 12px; /* Ajusta el valor del margen inferior */
+}
+
+/* Estilos personalizados para las etiquetas flotantes de los inputs cuando están seleccionados */
+ion-item:focus-within ion-label.stacked-label {
+  color: yellow; /* Color del texto cuando está seleccionado */
+}
+
+/* Modificar el color de la propiedad placeholder */
+ion-item {
+  color:#b8a7a7;
+}
